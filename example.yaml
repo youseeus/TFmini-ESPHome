@@ -4,10 +4,11 @@ esphome:
     - TFmini.h
 
 
+
 #**************** UART ********************
 uart:
-  tx_pin: 1 #D8
-  rx_pin: 3 #D7
+  tx_pin: D3
+  rx_pin: D4
   baud_rate: 115200
   id: uart_bus
   debug:
@@ -16,8 +17,7 @@ uart:
     after:
       delimiter: "\n"
     sequence:
-     - lambda: UARTDebug::log_string(direction, bytes);
-      
+      - lambda: UARTDebug::log_string(direction, bytes);
 #******************** Sensor *********************
 sensor:
   - platform: custom
